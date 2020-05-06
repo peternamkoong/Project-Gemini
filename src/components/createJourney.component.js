@@ -55,7 +55,7 @@ export default class CreateJourney extends Component {
         };
 
         axios
-            .post("http://18.222.138.157:8080/journey/add", newJourney)
+            .post("http://localhost:8080/journey/add", newJourney)
             .then((res) => console.log(res.data));
 
         this.setState({

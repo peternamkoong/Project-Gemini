@@ -22,7 +22,7 @@ export default class EditJourney extends Component {
 
     componentDidMount() {
         axios
-            .get("http://http://18.222.138.157:8080/journey/" + this.props.match.params.id)
+            .get("http://http://localhost:8080/journey/" + this.props.match.params.id)
             .then((response) => {
                 this.setState({
                     name: response.data.name,
@@ -69,7 +69,7 @@ export default class EditJourney extends Component {
             completed: this.state.completed,
         };
         axios
-            .post("http://18.222.138.157:8080/journey/update/" + this.props.match.params.id, obj)
+            .post("http://localhost:8080/journey/update/" + this.props.match.params.id, obj)
             .then((res) => {
                 console.log(res.data);
             });
