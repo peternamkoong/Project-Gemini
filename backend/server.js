@@ -71,7 +71,7 @@ journeyRoutes.route("/update/:id").post(function (req, res) {
     });
 });
 
-app.use("/journey", journeyRoutes);
+app.use("/", journeyRoutes);
 
 app.listen(PORT, function () {
     console.log("Server is Running on Port: " + PORT);
