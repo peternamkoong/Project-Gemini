@@ -22,7 +22,7 @@ export default class EditJourney extends Component {
 
     componentDidMount() {
         axios
-            .get("http://localhost:4000/journey/" + this.props.match.params.id)
+            .get("http://http://18.222.138.157:4000/journey/" + this.props.match.params.id)
             .then((response) => {
                 this.setState({
                     name: response.data.name,
