@@ -69,7 +69,7 @@ export default class EditJourney extends Component {
             completed: this.state.completed,
         };
         axios
-            .post("http://localhost:4000/journey/update/" + this.props.match.params.id, obj)
+            .post("http://18.222.138.157:4000/journey/update/" + this.props.match.params.id, obj)
             .then((res) => {
                 console.log(res.data);
             });

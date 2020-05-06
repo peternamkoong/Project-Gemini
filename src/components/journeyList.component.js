@@ -27,7 +27,7 @@ export default class JourneyList extends Component {
 
     componentDidMount() {
         axios
-            .get("http://localhost:4000/journey/")
+            .get("http://18.222.138.157:4000/journey/")
             .then((response) => {
                 this.setState({ journeys: response.data });
             })
@@ -37,7 +37,7 @@ export default class JourneyList extends Component {
     }
     componentDidUpdate() {
         axios
-            .get("http://localhost:4000/journey/")
+            .get("http://18.222.138.157:4000/journey/")
             .then((response) => {
                 this.setState({ journeys: response.data });
             })
