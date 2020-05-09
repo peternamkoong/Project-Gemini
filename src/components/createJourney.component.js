@@ -54,9 +54,7 @@ export default class CreateJourney extends Component {
             completed: this.state.completed,
         };
 
-        axios
-            .post("http://localhost:8080/journey/add", newJourney)
-            .then((res) => console.log(res.data));
+        axios.post("/journey/add", newJourney).then((res) => console.log(res.data));
 
         this.setState({
             name: "",

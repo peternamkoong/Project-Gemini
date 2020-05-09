@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const journeyRoutes = express.Router();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
+const path = require("path");
 
 let Journey = require("./journey.models");
 
@@ -70,6 +71,16 @@ journeyRoutes.route("/update/:id").post(function (req, res) {
         }
     });
 });
+
+//Server static assets if in production
+if (process.env.NODE_ENV === "production") {
+    //Set static folder
+    app.use(express.static("client/build"));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "build", "index.html"));
+    });
+}
 
 app.use("/journey", journeyRoutes);
 
