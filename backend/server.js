@@ -17,9 +17,9 @@ mongoose.connect(
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 const connection = mongoose.connection;
-app.get("/", (req, res) => {
-    res.send("API working properly!");
-});
+// app.get("/", (req, res) => {
+//     res.send("API working properly!");
+// });
 connection.once("open", function () {
     console.log("MongoDB Atlas connection established successfully");
 });
