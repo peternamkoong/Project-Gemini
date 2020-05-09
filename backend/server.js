@@ -22,9 +22,9 @@ connection.once("open", function () {
     console.log("MongoDB Atlas connection established successfully");
 });
 app.get("/", function (req, res) {
-    res.sendfile("index.js");
+    res.sendfile("../public/index.html");
 });
-app.use(express.static("../"));
+app.use(express.static("../public/index.html"));
 journeyRoutes.route("/").get(function (req, res) {
     Journey.find(function (err, journeys) {
         if (err) {
