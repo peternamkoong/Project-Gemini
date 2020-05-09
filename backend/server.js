@@ -17,14 +17,12 @@ mongoose.connect(
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 const connection = mongoose.connection;
-
+app.get("/", (req, res) => {
+    res.send("API working properly!");
+});
 connection.once("open", function () {
     console.log("MongoDB Atlas connection established successfully");
 });
-app.get("/", function (req, res) {
-    res.sendfile("../public/index.html");
-});
-app.use(express.static("../public/index.html"));
 journeyRoutes.route("/").get(function (req, res) {
     Journey.find(function (err, journeys) {
         if (err) {
