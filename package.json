@@ -16,7 +16,7 @@
     },
     "scripts": {
         "client-install": "npm install --prefix client",
-        "server": "cd backend && nodemon server.js",
+        "server": "cd backend && npm run server.js",
         "client": "react-scripts start",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "build": "react-scripts build",
